@@ -13,5 +13,31 @@ router.get('/notes', (req, res) => {
   }
 );
 
+//post notes
+router.post('/notes', (req, res) => {
+
+	let rawdata = fs.readFileSync(DB_PATH, 'utf-8');
+	
+	let notes;
+	try {
+	  notes = JSON.parse(rawdata) || [];
+	} catch (err) {
+	  console.error(err);
+	  notes = [];
+	}
+	let newId = uniqid();
+	const note = {
+	  id: newId,
+	  title: req.body.title,
+	  text: req.body.text,
+	}
+	notes.push(note);
+	
+	let output = JSON.stringify(notes, null, 2);
+	
+	fs.writeFileSync(DB_PATH, output)
+  
+	res.send(true);
+  });
 
 module.exports = router;
