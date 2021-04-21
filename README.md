@@ -42,4 +42,4 @@ https://github.com/n-flam/NadjasNoteTracker
 https://notet-racker.herokuapp.com/
 
 # Mockup
-![Alt text](https://github.com/n-flam/Online-Offline-Budget-Trackers/blob/master/mockup/Budget%20Tracker.png)
+![Alt text](https://github.com/n-flam/NadjasNoteTracker/blob/master/Assets/N-Note%20Tracker.png)
